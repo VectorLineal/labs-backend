@@ -15,6 +15,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.NONE;
 
+import java.util.List;
+
 @RunWith( SpringRunner.class )
 @DataJpaTest
 @AutoConfigureTestDatabase( replace = NONE )
@@ -47,6 +49,13 @@ public class RoleServiceTest{
 
         assertNotEquals( student, Role.getTeacher( ) );
         assertNotEquals( teacher, Role.getStudent( ) );
+    }
+    @Test
+    public void getAllTest( ){
+        List<Role> roles = roleService.getAll();
+        assertEquals( roles, Role.findAll());
+
+        assertNotEquals( roles, Role.findAll());
     }
 
 }

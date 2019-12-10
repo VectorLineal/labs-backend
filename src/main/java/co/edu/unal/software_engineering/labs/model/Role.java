@@ -91,6 +91,13 @@ public class Role implements Serializable{
     public static Role getTeacher( ){
         return TEACHER;
     }
+    
+    public static ArrayList<Role> findAll( ){
+    	ArrayList<Role> roles = new ArrayList<>();
+    	roles.add(STUDENT);
+    	roles.add(TEACHER);
+        return roles;
+    }
 
 
 
