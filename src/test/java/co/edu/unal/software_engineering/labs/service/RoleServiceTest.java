@@ -53,11 +53,9 @@ public class RoleServiceTest{
     @Test
     public void getAllTest( ){
         List<Role> roles = roleService.getAll();
-        assertEquals( roles.get(0), Role.getStudent( ) );
-        assertEquals( roles.get(1), Role.getTeacher( ) );
+        assertEquals( roles, Role.findAll( ) );
 
-        assertNotEquals( roles.get(0), Role.getTeacher( ) );
-        assertNotEquals( roles.get(1), Role.getStudent( ) );
+        assertNotEquals( roles, Role.findAll( ) );
     }
 
 }
